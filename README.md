@@ -17,7 +17,7 @@ Beside the tests marked with the @task tag there are more test cases that can be
 
 Some considerations when using the visual interface of Playwright:
 
-1) The first time you might see only the auth.setup test available, if that's the case please execute to it will authenticate and save the cookies so you don't need to do it in subsequent tests
+1) The first time you might see only the auth.setup test available, if that's the case execute it and it will authenticate and save the cookies so you don't need to do it in subsequent tests
 2) If you still see only this test, please check the settings and be sure to select firefox as well:
 
 ![setup screenshott](setup.png)
