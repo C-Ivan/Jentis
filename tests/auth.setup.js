@@ -6,7 +6,6 @@ const authFile = 'playwright/.auth/user.json';
 
 
 setup('authenticate', async ({ request }) => {
-    console.log(credentials);
     await request.post('/users/login', {
         data: {
             'email': credentials.email,

@@ -26,7 +26,7 @@ test.describe('Creating contacts', () => {
     })
 
     test('Add contact with all fields - API', async ({ page }) => {
-        const contactList = new ContactListPage(page);
-        await contactList.AddContactAPI(1);
+        const contactListPage = new ContactListPage(page);
+        await contactListPage.AddContactAPI(1);
     })
 })
