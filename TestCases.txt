@@ -1,0 +1,101 @@
+Test cases:
+
+Homepage
+
+@GUI @API @Regression
+When I register as a new user
+Then I should be logged in
+
+@GUI @API @Regression
+Given a registered user
+When I log in with valid credentials
+Then I should be successfully logged in
+
+@GUI
+When I try to log in with incorrect user
+Then I should see an error message
+
+@GUI
+When I try to log in with no user
+Then I should see an error message
+
+@GUI
+Given a logged user
+When I check the documentation link
+Then I should be redirected to the documentation page
+
+@API
+Given a logged user
+When I update user values using the API
+Then the user values should be successfully updated
+
+@API
+Given a logged user
+When I delete a user using the API
+Then the user should be successfully deleted
+
+
+Contact List
+
+@GUI @API 
+Given a logged user
+When I log out
+Then I should be successfully logged out
+
+@GUI @API
+Given a logged user
+When I create a new contact with only mandatory fields
+Then the contact should be successfully created
+
+@GUI @API @Regression
+Given a logged user
+When I create x new contacts with all fields
+Then the contacts should be successfully created
+
+@GUI
+Given a logged user
+When I try to create a new contact without mandatory fields
+Then I should see an error message
+
+@API
+Given a logged user
+When I partially update a contact
+Then the contact values should be successfully updated
+
+@GUI @API @Regression
+Given a logged user
+When I fully update a contact
+Then the contact values should be successfully updated
+
+@GUI @API @Regression
+Given a logged user
+When I delete x contacts
+Then the contacts should be successfully deleted
+
+@GUI
+Given a logged user
+When I go to add a new contact page and return through the cancel button
+Then I should be redirected back to the contact list page
+
+@GUI
+Given a logged user
+When I select a user from the list and return through the Return to Contact List button
+Then I should be redirected back to the contact list page
+
+@GUI
+Given a logged user
+When I select a user from the list, go to edit the contact and cancel
+Then the changes should not be saved and I should be redirected back to the contact list page
+
+@GUI
+Given a logged user
+When I select a user from the list, select delete contact and cancel the alert
+Then the contact should not be deleted and I should stay on the contact list page
+
+
+E2E Case
+
+@UI @Regression
+Given a logged user
+When I create a user, create a contact, update the contact values, delete the contact, log out and delete the user
+Then the entire flow should be successfully executed
