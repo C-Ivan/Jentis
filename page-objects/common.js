@@ -8,6 +8,11 @@ exports.Common = class Common {
         this.page = page;
     };
     async checkPageTitle(title) {
-        await expect(this.page.locator('h1', { hasText: title })).toBeVisible();
+        try {
+            await expect(this.page.locator('h1', { hasText: title })).toBeVisible();
+        } catch (error) {
+            console.error('Error occurred while checking page title:', error);
+            throw error;
+        }
     }
 };

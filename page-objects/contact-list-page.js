@@ -313,17 +313,14 @@ exports.ContactListPage = class ContactListPage {
     async deleteContactAPI(num) {
         try {
             const deletedNames = [];
-            // API request to get all entities and save as json
             let response = await this.page.request.get(`/contacts`);
             const allEntitiesJson = await response.json();
-            // Look for the first entity and delete it
             for (let i = 0; i < num; i++) {
                 const entityID = allEntitiesJson[i]._id;
                 const entityFullName = allEntitiesJson[i].firstName + ' ' + allEntitiesJson[i].lastName;
                 response = await this.page.request.delete(`/contacts/` + entityID);
                 expect(response.status()).toBe(200);
                 if (response.ok()) {
-                    // Here I log once I confirm the response is positive
                     deletedNames.push(entityFullName);
                 }
             }
