@@ -26,7 +26,7 @@ test.describe('Login', () => {
   });
   
   test.describe('Logout', () => {
-    test('Logout', { tag: ['@regression', '@smoke'] }, async ({ page }) => {
+    test('Logout', async ({ page }) => {
       const addUserPage = new AddUserPage(page);
       const email = credentials.email;
       const password = credentials.password;
