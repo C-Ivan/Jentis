@@ -11,7 +11,7 @@
 1) Install dependencies: `npm i`
 2) Install browsers: `playwright install`
 3) Execute all the tests that are marked with the @task tag: `playwright test --grep "@task" --workers=1`
-4) Check report with: `px playwright show-report`
+4) Check report with: `npx allure serve allure-results`
 
 Beside the tests marked with the @task tag there are more test cases that can be executed either from UI or directly by API calls, to check all the test cases please use the following command: `npx playwright test --ui`
 

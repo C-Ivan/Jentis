@@ -20,7 +20,6 @@ test.describe('Creating a new user', () => {
         await addUserPage.createNewUserUI('Iván', 'Cañete', email, password);
         await common.checkPageTitle('Contact List');
 
-        // Update credentials.json
         const credentials = { email, password };
         fs.writeFileSync(credentialsFile, JSON.stringify(credentials, null, 2));
     });

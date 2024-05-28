@@ -268,7 +268,6 @@ exports.ContactListPage = class ContactListPage {
             await expect.poll(async () => this.allContacts.count()).toBeGreaterThan(0);
             const num = await this.allContacts.count();
             this.page.on('dialog', async dialog => {
-                console.log(dialog.message());
                 await dialog.accept();
             });
             for (let i = 0; i < num; i++) {

@@ -5,7 +5,7 @@ const { Common } = require("../page-objects/common");
 
 test.describe('e2e flow', () => {
 
-    test('Full e2e flow', { tag: ['@regression', '@task'] }, async ({ page }) => {
+    test('e2e flow', { tag: ['@regression', '@task'] }, async ({ page }) => {
         const addUserPage = new AddUserPage(page);
         const contactListPage = new ContactListPage(page);
         await addUserPage.goto();
@@ -24,6 +24,5 @@ test.describe('e2e flow', () => {
         await contactListPage.deleteFirstContact();
         // Logout
         await addUserPage.logout();
-        // Delete user
     });
 });
