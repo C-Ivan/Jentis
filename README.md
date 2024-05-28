@@ -1,7 +1,7 @@
 # Jentis task
 **Please check the Questions.md document to find the answer to the questions of the case study.**
 
-**The test cases can be found in the TestCases.txt file**
+**The test cases documentation can be found in the TestCases.txt**
 
 
 ----
